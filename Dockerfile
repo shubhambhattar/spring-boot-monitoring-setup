@@ -6,7 +6,8 @@ RUN [ "useradd", "--system", "--gid", "spring-boot", "spring-boot-user" ]
 USER spring-boot-user
 
 # Configuration
-ENV JAVA_TOOL_OPTIONS="-XX:+UseContainerSupport \
+ENV JAVA_TOOL_OPTIONS="-XX:+PrintFlagsFinal \
+                        -XX:+UseContainerSupport \
                         -XX:MaxRAMPercentage=60.0 \
                         -XX:+UseG1GC \
                         -XX:+HeapDumpOnOutOfMemoryError \
