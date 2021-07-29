@@ -22,6 +22,10 @@
     {
       "collapsed": true,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -37,10 +41,6 @@
           "dashes": false,
           "datasource": null,
           "description": "Time spent in GC pause",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -62,6 +62,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:01:37.5403755Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:01:37.5403914Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "GC Pause: End of Minor GC",
+            "uid": "MghczrW7z",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -69,7 +91,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -144,10 +166,6 @@
           "dashes": false,
           "datasource": null,
           "description": "#times minor gc was triggered / sec",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -169,6 +187,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:01:40.9664943Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:01:40.9665086Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "End of minor GC Triggers / sec",
+            "uid": "4F1cz9W7z",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -176,7 +216,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -243,10 +283,6 @@
           "dashes": false,
           "datasource": null,
           "description": "Size of long-lived heap memory pool after reclamation",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -268,6 +304,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:01:45.7331263Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:01:45.7331439Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "GC: Live Data Size",
+            "uid": "7REcz9Wnk",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -275,7 +333,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -342,10 +400,6 @@
           "dashes": false,
           "datasource": null,
           "description": "Time spent in GC pause",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -367,6 +421,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:01:49.736834Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:01:49.7368515Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "GC Pause: End of Major GC",
+            "uid": "NjwczrW7k",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -374,7 +450,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -449,10 +525,6 @@
           "dashes": false,
           "datasource": null,
           "description": "#times major gc was triggered / sec",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -474,6 +546,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:01:53.3782395Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:01:53.3782837Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "Major GC Triggers / sec",
+            "uid": "ioCckrZnk",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -481,7 +575,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -548,10 +642,6 @@
           "dashes": false,
           "datasource": null,
           "description": "Max size of long-lived heap memory pool",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -573,6 +663,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:01:56.7564861Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:01:56.7565035Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "GC: Max Size of long lived memory pool",
+            "uid": "fURpk9Wnz",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -580,7 +692,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -647,10 +759,6 @@
           "dashes": false,
           "datasource": null,
           "description": "Incremented for an increase in the size of the (young) heap memory pool after one GC to before the next",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -672,6 +780,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:02:00.6693921Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:02:00.6694087Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "GC: Allocated Memory / sec",
+            "uid": "CxMpk9Wnk",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -679,7 +809,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -746,10 +876,6 @@
           "dashes": false,
           "datasource": null,
           "description": "Count of positive increases in the size of the old generation memory pool before GC to after GC",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -771,6 +897,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:02:04.165537Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:02:04.1655542Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "GC: Promoted Memory / sec",
+            "uid": "ngHpzrZ7z",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -778,7 +926,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -845,6 +993,10 @@
     {
       "collapsed": true,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -860,10 +1012,6 @@
           "dashes": false,
           "datasource": null,
           "description": "Number of error level events that made it to the logs",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -885,6 +1033,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:02:12.5787622Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:02:12.5787771Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "Logback",
+            "uid": "mI0tz9Z7z",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -892,7 +1062,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -959,6 +1129,10 @@
     {
       "collapsed": true,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -974,10 +1148,6 @@
           "dashes": false,
           "datasource": null,
           "description": "The amount of used memory",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -999,6 +1169,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:02:18.3440348Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:02:18.3440549Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "Heap: Used Memory",
+            "uid": "IXLpkrZ7z",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -1006,7 +1198,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1073,10 +1265,6 @@
           "dashes": false,
           "datasource": null,
           "description": "The amount of memory in bytes that is committed for the Java virtual machine to use",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -1098,6 +1286,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:02:21.8853196Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:02:21.8853369Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "Heap: Committed Memory",
+            "uid": "jvwtkrZnz",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -1105,7 +1315,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1173,10 +1383,6 @@
           "dashes": false,
           "datasource": null,
           "description": "The maximum amount of memory in bytes that can be used for memory management",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -1198,6 +1404,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:02:25.0607296Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:02:25.0607439Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "Heap: Max Memory",
+            "uid": "Gt9tzrZ7k",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -1205,7 +1433,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1272,10 +1500,6 @@
           "dashes": false,
           "datasource": null,
           "description": "The amount of used memory",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -1297,6 +1521,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:02:29.3396283Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:02:29.339647Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "NonHeap: Used Memory",
+            "uid": "ubR2z9Znk",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -1304,7 +1550,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1371,10 +1617,6 @@
           "dashes": false,
           "datasource": null,
           "description": "The amount of memory in bytes that is committed for the Java virtual machine to use",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -1396,6 +1638,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:02:32.6752459Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:02:32.6752627Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "NonHeap: Committed Memory",
+            "uid": "muZ2zrZnk",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -1403,7 +1667,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1471,10 +1735,6 @@
           "dashes": false,
           "datasource": null,
           "description": "The maximum amount of memory in bytes that can be used for memory management",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -1496,6 +1756,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:02:35.88866Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:02:35.8887621Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "NonHeap: Max Memory",
+            "uid": "0eVhz9Znz",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -1503,7 +1785,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1570,10 +1852,6 @@
           "dashes": false,
           "datasource": null,
           "description": "An estimate of the memory that the Java virtual machine is using for this buffer pool",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -1595,6 +1873,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:02:40.6397037Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:02:40.6398395Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "Buffer: Used Memory",
+            "uid": "e-Khz9Znz",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -1602,7 +1902,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1669,10 +1969,6 @@
           "dashes": false,
           "datasource": null,
           "description": "An estimate of the total capacity of the buffers in this pool",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -1694,6 +1990,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:02:43.9753151Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:02:43.9753301Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "Buffer: Total Capacity",
+            "uid": "I92hzrZ7k",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -1701,7 +2019,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1768,10 +2086,6 @@
           "dashes": false,
           "datasource": null,
           "description": "An estimate of the number of buffers in the pool",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -1793,6 +2107,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:02:47.1849664Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:02:47.1849827Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "Buffer: Count",
+            "uid": "Agx2z9Znk",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -1800,7 +2136,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1867,6 +2203,10 @@
     {
       "collapsed": true,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1882,10 +2222,6 @@
           "dashes": false,
           "datasource": null,
           "description": "The current number of threads having NEW state",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -1907,6 +2243,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:02:53.643384Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:02:53.643401Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "Thread States",
+            "uid": "KOUhkrW7z",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -1914,7 +2272,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1981,10 +2339,6 @@
           "dashes": false,
           "datasource": null,
           "description": "The current number of live threads including both daemon and non-daemon threads",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -2006,6 +2360,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:02:58.3197429Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:02:58.3197607Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "Live Threads",
+            "uid": "T992k9Znk",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -2013,7 +2389,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -2080,10 +2456,6 @@
           "dashes": false,
           "datasource": null,
           "description": "The current number of live daemon threads",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -2105,6 +2477,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:03:06.6586087Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:03:06.6589429Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "Daemon Threads",
+            "uid": "iz7ozrW7k",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -2112,7 +2506,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -2179,10 +2573,6 @@
           "dashes": false,
           "datasource": null,
           "description": "The peak live thread count since the Java virtual machine started or peak was reset",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -2204,6 +2594,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:03:10.1337349Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:03:10.1337507Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "Peak Threads",
+            "uid": "LtHokrZ7z",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -2211,7 +2623,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -2278,6 +2690,10 @@
     {
       "collapsed": true,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2293,17 +2709,13 @@
           "dashes": false,
           "datasource": null,
           "description": "The \"recent cpu usage\" for the Java Virtual Machine process",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 9
+            "y": 5
           },
           "hiddenSeries": false,
           "id": 45,
@@ -2318,6 +2730,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:03:17.2768678Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:03:17.2769165Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "Process CPU Usage",
+            "uid": "9cTTzrW7k",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -2325,7 +2759,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -2392,17 +2826,13 @@
           "dashes": false,
           "datasource": null,
           "description": "The open file descriptor count",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 9
+            "y": 5
           },
           "hiddenSeries": false,
           "id": 46,
@@ -2417,6 +2847,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:03:20.2341493Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:03:20.2341675Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "Open files count",
+            "uid": "dvxok9Znz",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -2424,7 +2876,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -2491,6 +2943,10 @@
     {
       "collapsed": true,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2506,17 +2962,13 @@
           "dashes": false,
           "datasource": null,
           "description": "The \"recent cpu usage\" for the whole system",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 1
+            "y": 6
           },
           "hiddenSeries": false,
           "id": 49,
@@ -2531,6 +2983,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:03:25.5225256Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:03:25.5225407Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "System CPU Usage",
+            "uid": "b2yozrWnz",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -2538,7 +3012,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -2605,17 +3079,13 @@
           "dashes": false,
           "datasource": null,
           "description": "The sum of the number of runnable entities queued to available processors and the number of runnable entities running on the available processors averaged over a period of time",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 1
+            "y": 6
           },
           "hiddenSeries": false,
           "id": 50,
@@ -2630,6 +3100,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:03:28.5749763Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:03:28.5749924Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "System Load Average",
+            "uid": "3p_TzrZnz",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -2637,7 +3129,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -2704,6 +3196,10 @@
     {
       "collapsed": true,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2719,17 +3215,13 @@
           "dashes": false,
           "datasource": null,
           "description": "The number of classes that are currently loaded in the Java virtual machine",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 13
+            "y": 7
           },
           "hiddenSeries": false,
           "id": 41,
@@ -2744,6 +3236,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:03:33.9563935Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:03:33.9564911Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "Loaded classes",
+            "uid": "GP6TkrW7z",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -2751,7 +3265,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -2818,17 +3332,13 @@
           "dashes": false,
           "datasource": null,
           "description": "The number of classes unloaded / sec since the Java virtual machine has started execution",
-          "fieldConfig": {
-            "defaults": {},
-            "overrides": []
-          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 13
+            "y": 7
           },
           "hiddenSeries": false,
           "id": 42,
@@ -2843,6 +3353,28 @@
             "total": false,
             "values": true
           },
+          "libraryPanel": {
+            "meta": {
+              "connectedDashboards": 0,
+              "created": "2021-07-29T14:03:36.8206412Z",
+              "createdBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              },
+              "folderName": "",
+              "folderUid": "",
+              "updated": "2021-07-29T14:03:36.8206567Z",
+              "updatedBy": {
+                "avatarUrl": "",
+                "id": 0,
+                "name": ""
+              }
+            },
+            "name": "Unloaded classes / sec",
+            "uid": "BTm0krZ7z",
+            "version": 1
+          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -2850,7 +3382,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.5",
+          "pluginVersion": "8.0.6",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -2916,7 +3448,7 @@
     }
   ],
   "refresh": "1m",
-  "schemaVersion": 27,
+  "schemaVersion": 30,
   "style": "dark",
   "tags": [],
   "templating": {
