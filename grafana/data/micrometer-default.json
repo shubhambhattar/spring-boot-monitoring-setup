@@ -8,6 +8,12 @@
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
         "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
         "type": "dashboard"
       }
     ]
@@ -17,15 +23,12 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 1,
+  "iteration": 1629407211725,
   "links": [],
   "panels": [
     {
       "collapsed": true,
       "datasource": null,
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -62,28 +65,6 @@
             "total": false,
             "values": true
           },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-07-29T14:01:37.5403755Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-07-29T14:01:37.5403914Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "GC Pause: End of Minor GC",
-            "uid": "MghczrW7z",
-            "version": 1
-          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -91,7 +72,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -102,14 +83,14 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "rate(jvm_gc_pause_seconds_sum{action=\"end of minor GC\"}[1m]) / rate(jvm_gc_pause_seconds_count{action=\"end of minor GC\"}[1m])",
+              "expr": "rate(jvm_gc_pause_seconds_sum{app=\"$app\", action=\"end of minor GC\"}[1m]) / rate(jvm_gc_pause_seconds_count{app=\"$app\", action=\"end of minor GC\"}[1m])",
               "interval": "",
               "legendFormat": "avg: {{cause}}",
               "refId": "A"
             },
             {
               "exemplar": true,
-              "expr": "jvm_gc_pause_seconds_max{action=\"end of minor GC\"}",
+              "expr": "jvm_gc_pause_seconds_max{app=\"$app\", action=\"end of minor GC\", instance=\"$instance\"}",
               "hide": false,
               "interval": "",
               "legendFormat": "max: {{cause}}",
@@ -190,7 +171,7 @@
           "libraryPanel": {
             "meta": {
               "connectedDashboards": 0,
-              "created": "2021-07-29T14:01:40.9664943Z",
+              "created": "2021-08-19T21:08:50.915394177Z",
               "createdBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -198,7 +179,7 @@
               },
               "folderName": "",
               "folderUid": "",
-              "updated": "2021-07-29T14:01:40.9665086Z",
+              "updated": "2021-08-19T21:08:50.915394295Z",
               "updatedBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -206,7 +187,7 @@
               }
             },
             "name": "End of minor GC Triggers / sec",
-            "uid": "4F1cz9W7z",
+            "uid": "Z-Q79b7nk",
             "version": 1
           },
           "lines": true,
@@ -216,7 +197,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -227,7 +208,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "rate(jvm_gc_pause_seconds_count{action=\"end of minor GC\"}[1m])",
+              "expr": "rate(jvm_gc_pause_seconds_count{app=\"$app\", action=\"end of minor GC\", instance=\"$instance\"}[1m])",
               "interval": "",
               "legendFormat": "{{cause}}",
               "refId": "A"
@@ -307,7 +288,7 @@
           "libraryPanel": {
             "meta": {
               "connectedDashboards": 0,
-              "created": "2021-07-29T14:01:45.7331263Z",
+              "created": "2021-08-19T21:08:54.218783536Z",
               "createdBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -315,7 +296,7 @@
               },
               "folderName": "",
               "folderUid": "",
-              "updated": "2021-07-29T14:01:45.7331439Z",
+              "updated": "2021-08-19T21:08:54.218783629Z",
               "updatedBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -323,7 +304,7 @@
               }
             },
             "name": "GC: Live Data Size",
-            "uid": "7REcz9Wnk",
+            "uid": "d_9n9x77z",
             "version": 1
           },
           "lines": true,
@@ -333,7 +314,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -344,7 +325,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "jvm_gc_live_data_size_bytes",
+              "expr": "jvm_gc_live_data_size_bytes{app=\"$app\", instance=\"$instance\"}",
               "interval": "",
               "legendFormat": "{{instance}}",
               "refId": "A"
@@ -424,7 +405,7 @@
           "libraryPanel": {
             "meta": {
               "connectedDashboards": 0,
-              "created": "2021-07-29T14:01:49.736834Z",
+              "created": "2021-08-19T21:10:04.526073Z",
               "createdBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -432,7 +413,7 @@
               },
               "folderName": "",
               "folderUid": "",
-              "updated": "2021-07-29T14:01:49.7368515Z",
+              "updated": "2021-08-19T21:10:04.526073265Z",
               "updatedBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -440,7 +421,7 @@
               }
             },
             "name": "GC Pause: End of Major GC",
-            "uid": "NjwczrW7k",
+            "uid": "hTzNrb7nk",
             "version": 1
           },
           "lines": true,
@@ -450,7 +431,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -461,14 +442,14 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "rate(jvm_gc_pause_seconds_sum{action=\"end of major GC\"}[1m]) / rate(jvm_gc_pause_seconds_count{action=\"end of major GC\"}[1m])",
+              "expr": "rate(jvm_gc_pause_seconds_sum{app=\"$app\", action=\"end of major GC\"}[1m]) / rate(jvm_gc_pause_seconds_count{action=\"end of major GC\"}[1m])",
               "interval": "",
               "legendFormat": "avg: {{cause}}",
               "refId": "A"
             },
             {
               "exemplar": true,
-              "expr": "jvm_gc_pause_seconds_max{action=\"end of major GC\"}",
+              "expr": "jvm_gc_pause_seconds_max{app=\"$app\", action=\"end of major GC\", instance=\"$instance\"}",
               "hide": false,
               "interval": "",
               "legendFormat": "max: {{cause}}",
@@ -549,7 +530,7 @@
           "libraryPanel": {
             "meta": {
               "connectedDashboards": 0,
-              "created": "2021-07-29T14:01:53.3782395Z",
+              "created": "2021-08-19T21:10:07.582264492Z",
               "createdBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -557,7 +538,7 @@
               },
               "folderName": "",
               "folderUid": "",
-              "updated": "2021-07-29T14:01:53.3782837Z",
+              "updated": "2021-08-19T21:10:07.582264666Z",
               "updatedBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -565,7 +546,7 @@
               }
             },
             "name": "Major GC Triggers / sec",
-            "uid": "ioCckrZnk",
+            "uid": "qhGHrx77k",
             "version": 1
           },
           "lines": true,
@@ -575,7 +556,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -586,7 +567,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "rate(jvm_gc_pause_seconds_count{action=\"end of major GC\"}[1m])",
+              "expr": "rate(jvm_gc_pause_seconds_count{app=\"$app\", action=\"end of major GC\", instance=\"$instance\"}[1m])",
               "interval": "",
               "legendFormat": "{{cause}}",
               "refId": "A"
@@ -666,7 +647,7 @@
           "libraryPanel": {
             "meta": {
               "connectedDashboards": 0,
-              "created": "2021-07-29T14:01:56.7564861Z",
+              "created": "2021-08-19T21:10:12.69243737Z",
               "createdBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -674,7 +655,7 @@
               },
               "folderName": "",
               "folderUid": "",
-              "updated": "2021-07-29T14:01:56.7565035Z",
+              "updated": "2021-08-19T21:10:12.692437496Z",
               "updatedBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -682,7 +663,7 @@
               }
             },
             "name": "GC: Max Size of long lived memory pool",
-            "uid": "fURpk9Wnz",
+            "uid": "fhvN9b7nk",
             "version": 1
           },
           "lines": true,
@@ -692,7 +673,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -703,7 +684,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "jvm_gc_max_data_size_bytes",
+              "expr": "jvm_gc_max_data_size_bytes{app=\"$app\", instance=\"$instance\"}",
               "interval": "",
               "legendFormat": "{{instance}}",
               "refId": "A"
@@ -783,7 +764,7 @@
           "libraryPanel": {
             "meta": {
               "connectedDashboards": 0,
-              "created": "2021-07-29T14:02:00.6693921Z",
+              "created": "2021-08-19T21:10:18.23398732Z",
               "createdBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -791,7 +772,7 @@
               },
               "folderName": "",
               "folderUid": "",
-              "updated": "2021-07-29T14:02:00.6694087Z",
+              "updated": "2021-08-19T21:10:18.233987413Z",
               "updatedBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -799,7 +780,7 @@
               }
             },
             "name": "GC: Allocated Memory / sec",
-            "uid": "CxMpk9Wnk",
+            "uid": "QX2Hrxn7z",
             "version": 1
           },
           "lines": true,
@@ -809,7 +790,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -820,7 +801,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "rate(jvm_gc_memory_allocated_bytes_total[1m])",
+              "expr": "rate(jvm_gc_memory_allocated_bytes_total{app=\"$app\", instance=\"$instance\"}[1m])",
               "interval": "",
               "legendFormat": "{{instance}}",
               "refId": "A"
@@ -900,7 +881,7 @@
           "libraryPanel": {
             "meta": {
               "connectedDashboards": 0,
-              "created": "2021-07-29T14:02:04.165537Z",
+              "created": "2021-08-19T21:10:22.879807102Z",
               "createdBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -908,7 +889,7 @@
               },
               "folderName": "",
               "folderUid": "",
-              "updated": "2021-07-29T14:02:04.1655542Z",
+              "updated": "2021-08-19T21:10:22.87980716Z",
               "updatedBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -916,7 +897,7 @@
               }
             },
             "name": "GC: Promoted Memory / sec",
-            "uid": "ngHpzrZ7z",
+            "uid": "ecaN9b77k",
             "version": 1
           },
           "lines": true,
@@ -926,7 +907,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -937,7 +918,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "rate(jvm_gc_memory_promoted_bytes_total[1m])",
+              "expr": "rate(jvm_gc_memory_promoted_bytes_total{app=\"$app\", instance=\"$instance\"}[1m])",
               "interval": "",
               "legendFormat": "{{instance}}",
               "refId": "A"
@@ -993,10 +974,6 @@
     {
       "collapsed": true,
       "datasource": null,
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1036,7 +1013,7 @@
           "libraryPanel": {
             "meta": {
               "connectedDashboards": 0,
-              "created": "2021-07-29T14:02:12.5787622Z",
+              "created": "2021-08-19T21:10:49.315807447Z",
               "createdBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -1044,7 +1021,7 @@
               },
               "folderName": "",
               "folderUid": "",
-              "updated": "2021-07-29T14:02:12.5787771Z",
+              "updated": "2021-08-19T21:10:49.315807548Z",
               "updatedBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -1052,7 +1029,7 @@
               }
             },
             "name": "Logback",
-            "uid": "mI0tz9Z7z",
+            "uid": "WItDrbnnk",
             "version": 1
           },
           "lines": true,
@@ -1062,7 +1039,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1073,7 +1050,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "rate(logback_events_total[1m])",
+              "expr": "rate(logback_events_total{app=\"$app\", instance=\"$instance\"}[1m])",
               "interval": "",
               "legendFormat": "{{level}}",
               "refId": "A"
@@ -1129,10 +1106,6 @@
     {
       "collapsed": true,
       "datasource": null,
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1172,7 +1145,7 @@
           "libraryPanel": {
             "meta": {
               "connectedDashboards": 0,
-              "created": "2021-07-29T14:02:18.3440348Z",
+              "created": "2021-08-19T21:12:22.519688719Z",
               "createdBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -1180,7 +1153,7 @@
               },
               "folderName": "",
               "folderUid": "",
-              "updated": "2021-07-29T14:02:18.3440549Z",
+              "updated": "2021-08-19T21:12:22.51968878Z",
               "updatedBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -1188,7 +1161,7 @@
               }
             },
             "name": "Heap: Used Memory",
-            "uid": "IXLpkrZ7z",
+            "uid": "ySNcrbn7z",
             "version": 1
           },
           "lines": true,
@@ -1198,7 +1171,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1209,7 +1182,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "jvm_memory_used_bytes{area=\"heap\"}",
+              "expr": "jvm_memory_used_bytes{app=\"$app\", area=\"heap\", instance=\"$instance\"}",
               "interval": "",
               "legendFormat": "{{id}}",
               "refId": "A"
@@ -1289,7 +1262,7 @@
           "libraryPanel": {
             "meta": {
               "connectedDashboards": 0,
-              "created": "2021-07-29T14:02:21.8853196Z",
+              "created": "2021-08-19T21:12:25.333976867Z",
               "createdBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -1297,7 +1270,7 @@
               },
               "folderName": "",
               "folderUid": "",
-              "updated": "2021-07-29T14:02:21.8853369Z",
+              "updated": "2021-08-19T21:12:25.333976953Z",
               "updatedBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -1305,7 +1278,7 @@
               }
             },
             "name": "Heap: Committed Memory",
-            "uid": "jvwtkrZnz",
+            "uid": "L6d5rbnnz",
             "version": 1
           },
           "lines": true,
@@ -1315,7 +1288,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1326,7 +1299,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "jvm_memory_committed_bytes{area=\"heap\"}",
+              "expr": "jvm_memory_committed_bytes{app=\"$app\", area=\"heap\", instance=\"$instance\"}",
               "hide": false,
               "interval": "",
               "legendFormat": "{{id}}",
@@ -1407,7 +1380,7 @@
           "libraryPanel": {
             "meta": {
               "connectedDashboards": 0,
-              "created": "2021-07-29T14:02:25.0607296Z",
+              "created": "2021-08-19T21:12:28.627627181Z",
               "createdBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -1415,7 +1388,7 @@
               },
               "folderName": "",
               "folderUid": "",
-              "updated": "2021-07-29T14:02:25.0607439Z",
+              "updated": "2021-08-19T21:12:28.627627259Z",
               "updatedBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -1423,7 +1396,7 @@
               }
             },
             "name": "Heap: Max Memory",
-            "uid": "Gt9tzrZ7k",
+            "uid": "-Vhcrbn7z",
             "version": 1
           },
           "lines": true,
@@ -1433,7 +1406,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1444,7 +1417,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "jvm_memory_max_bytes{area=\"heap\"}",
+              "expr": "jvm_memory_max_bytes{app=\"$app\", area=\"heap\", instance=\"$instance\"}",
               "interval": "",
               "legendFormat": "{{id}}",
               "refId": "A"
@@ -1524,7 +1497,7 @@
           "libraryPanel": {
             "meta": {
               "connectedDashboards": 0,
-              "created": "2021-07-29T14:02:29.3396283Z",
+              "created": "2021-08-19T21:12:34.766770933Z",
               "createdBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -1532,7 +1505,7 @@
               },
               "folderName": "",
               "folderUid": "",
-              "updated": "2021-07-29T14:02:29.339647Z",
+              "updated": "2021-08-19T21:12:34.766771002Z",
               "updatedBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -1540,7 +1513,7 @@
               }
             },
             "name": "NonHeap: Used Memory",
-            "uid": "ubR2z9Znk",
+            "uid": "24fcrb77z",
             "version": 1
           },
           "lines": true,
@@ -1550,7 +1523,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1561,7 +1534,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "jvm_memory_used_bytes{area=\"nonheap\"}",
+              "expr": "jvm_memory_used_bytes{app=\"$app\", area=\"nonheap\", instance=\"$instance\"}",
               "interval": "",
               "legendFormat": "{{id}}",
               "refId": "A"
@@ -1641,7 +1614,7 @@
           "libraryPanel": {
             "meta": {
               "connectedDashboards": 0,
-              "created": "2021-07-29T14:02:32.6752459Z",
+              "created": "2021-08-19T21:12:37.74923186Z",
               "createdBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -1649,7 +1622,7 @@
               },
               "folderName": "",
               "folderUid": "",
-              "updated": "2021-07-29T14:02:32.6752627Z",
+              "updated": "2021-08-19T21:12:37.74923197Z",
               "updatedBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -1657,7 +1630,7 @@
               }
             },
             "name": "NonHeap: Committed Memory",
-            "uid": "muZ2zrZnk",
+            "uid": "LWs5rbn7k",
             "version": 1
           },
           "lines": true,
@@ -1667,7 +1640,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1678,7 +1651,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "jvm_memory_committed_bytes{area=\"nonheap\"}",
+              "expr": "jvm_memory_committed_bytes{app=\"$app\", area=\"nonheap\", instance=\"$instance\"}",
               "hide": false,
               "interval": "",
               "legendFormat": "{{id}}",
@@ -1759,7 +1732,7 @@
           "libraryPanel": {
             "meta": {
               "connectedDashboards": 0,
-              "created": "2021-07-29T14:02:35.88866Z",
+              "created": "2021-08-19T21:12:41.224374528Z",
               "createdBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -1767,7 +1740,7 @@
               },
               "folderName": "",
               "folderUid": "",
-              "updated": "2021-07-29T14:02:35.8887621Z",
+              "updated": "2021-08-19T21:12:41.224374612Z",
               "updatedBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -1775,7 +1748,7 @@
               }
             },
             "name": "NonHeap: Max Memory",
-            "uid": "0eVhz9Znz",
+            "uid": "HAl5rx7nz",
             "version": 1
           },
           "lines": true,
@@ -1785,7 +1758,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1796,7 +1769,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "jvm_memory_max_bytes{area=\"nonheap\"}",
+              "expr": "jvm_memory_max_bytes{app=\"$app\", area=\"nonheap\", instance=\"$instance\"}",
               "interval": "",
               "legendFormat": "{{id}}",
               "refId": "A"
@@ -1876,7 +1849,7 @@
           "libraryPanel": {
             "meta": {
               "connectedDashboards": 0,
-              "created": "2021-07-29T14:02:40.6397037Z",
+              "created": "2021-08-19T21:12:45.17011149Z",
               "createdBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -1884,7 +1857,7 @@
               },
               "folderName": "",
               "folderUid": "",
-              "updated": "2021-07-29T14:02:40.6398395Z",
+              "updated": "2021-08-19T21:12:45.170111569Z",
               "updatedBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -1892,7 +1865,7 @@
               }
             },
             "name": "Buffer: Used Memory",
-            "uid": "e-Khz9Znz",
+            "uid": "bKqcrb7nk",
             "version": 1
           },
           "lines": true,
@@ -1902,7 +1875,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1913,7 +1886,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "jvm_buffer_memory_used_bytes",
+              "expr": "jvm_buffer_memory_used_bytes{app=\"$app\", instance=\"$instance\"}",
               "interval": "",
               "legendFormat": "{{id}}",
               "refId": "A"
@@ -1993,7 +1966,7 @@
           "libraryPanel": {
             "meta": {
               "connectedDashboards": 0,
-              "created": "2021-07-29T14:02:43.9753151Z",
+              "created": "2021-08-19T21:12:48.183490874Z",
               "createdBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -2001,7 +1974,7 @@
               },
               "folderName": "",
               "folderUid": "",
-              "updated": "2021-07-29T14:02:43.9753301Z",
+              "updated": "2021-08-19T21:12:48.183490985Z",
               "updatedBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -2009,7 +1982,7 @@
               }
             },
             "name": "Buffer: Total Capacity",
-            "uid": "I92hzrZ7k",
+            "uid": "svktrx7nz",
             "version": 1
           },
           "lines": true,
@@ -2019,7 +1992,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -2030,7 +2003,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "jvm_buffer_total_capacity_bytes",
+              "expr": "jvm_buffer_total_capacity_bytes{app=\"$app\", instance=\"$instance\"}",
               "interval": "",
               "legendFormat": "{{id}}",
               "refId": "A"
@@ -2110,7 +2083,7 @@
           "libraryPanel": {
             "meta": {
               "connectedDashboards": 0,
-              "created": "2021-07-29T14:02:47.1849664Z",
+              "created": "2021-08-19T21:12:51.413084935Z",
               "createdBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -2118,7 +2091,7 @@
               },
               "folderName": "",
               "folderUid": "",
-              "updated": "2021-07-29T14:02:47.1849827Z",
+              "updated": "2021-08-19T21:12:51.413085029Z",
               "updatedBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -2126,7 +2099,7 @@
               }
             },
             "name": "Buffer: Count",
-            "uid": "Agx2z9Znk",
+            "uid": "YhMprbn7z",
             "version": 1
           },
           "lines": true,
@@ -2136,7 +2109,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -2147,7 +2120,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "jvm_buffer_count_buffers",
+              "expr": "jvm_buffer_count_buffers{app=\"$app\", instance=\"$instance\"}",
               "interval": "",
               "legendFormat": "{{id}}",
               "refId": "A"
@@ -2203,10 +2176,6 @@
     {
       "collapsed": true,
       "datasource": null,
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2246,7 +2215,7 @@
           "libraryPanel": {
             "meta": {
               "connectedDashboards": 0,
-              "created": "2021-07-29T14:02:53.643384Z",
+              "created": "2021-08-19T21:13:34.329386608Z",
               "createdBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -2254,7 +2223,7 @@
               },
               "folderName": "",
               "folderUid": "",
-              "updated": "2021-07-29T14:02:53.643401Z",
+              "updated": "2021-08-19T21:13:34.329386676Z",
               "updatedBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -2262,7 +2231,7 @@
               }
             },
             "name": "Thread States",
-            "uid": "KOUhkrW7z",
+            "uid": "wFh2rbnnk",
             "version": 1
           },
           "lines": true,
@@ -2272,7 +2241,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -2283,7 +2252,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "jvm_threads_states_threads",
+              "expr": "jvm_threads_states_threads{app=\"$app\", instance=\"$instance\"}",
               "interval": "",
               "legendFormat": "{{state}}",
               "refId": "A"
@@ -2363,7 +2332,7 @@
           "libraryPanel": {
             "meta": {
               "connectedDashboards": 0,
-              "created": "2021-07-29T14:02:58.3197429Z",
+              "created": "2021-08-19T21:13:38.084765247Z",
               "createdBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -2371,7 +2340,7 @@
               },
               "folderName": "",
               "folderUid": "",
-              "updated": "2021-07-29T14:02:58.3197607Z",
+              "updated": "2021-08-19T21:13:38.084765338Z",
               "updatedBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -2379,7 +2348,7 @@
               }
             },
             "name": "Live Threads",
-            "uid": "T992k9Znk",
+            "uid": "Gzxh9xnnz",
             "version": 1
           },
           "lines": true,
@@ -2389,7 +2358,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -2400,7 +2369,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "jvm_threads_live_threads",
+              "expr": "jvm_threads_live_threads{app=\"$app\", instance=\"$instance\"}",
               "interval": "",
               "legendFormat": "{{instance}}",
               "refId": "A"
@@ -2480,7 +2449,7 @@
           "libraryPanel": {
             "meta": {
               "connectedDashboards": 0,
-              "created": "2021-07-29T14:03:06.6586087Z",
+              "created": "2021-08-19T21:13:43.252219692Z",
               "createdBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -2488,7 +2457,7 @@
               },
               "folderName": "",
               "folderUid": "",
-              "updated": "2021-07-29T14:03:06.6589429Z",
+              "updated": "2021-08-19T21:13:43.25221978Z",
               "updatedBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -2496,7 +2465,7 @@
               }
             },
             "name": "Daemon Threads",
-            "uid": "iz7ozrW7k",
+            "uid": "fiyh9x7nz",
             "version": 1
           },
           "lines": true,
@@ -2506,7 +2475,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -2517,7 +2486,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "jvm_threads_daemon_threads",
+              "expr": "jvm_threads_daemon_threads{app=\"$app\", instance=\"$instance\"}",
               "interval": "",
               "legendFormat": "{{instance}}",
               "refId": "A"
@@ -2597,7 +2566,7 @@
           "libraryPanel": {
             "meta": {
               "connectedDashboards": 0,
-              "created": "2021-07-29T14:03:10.1337349Z",
+              "created": "2021-08-19T21:13:49.128013124Z",
               "createdBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -2605,7 +2574,7 @@
               },
               "folderName": "",
               "folderUid": "",
-              "updated": "2021-07-29T14:03:10.1337507Z",
+              "updated": "2021-08-19T21:13:49.128013206Z",
               "updatedBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -2613,7 +2582,7 @@
               }
             },
             "name": "Peak Threads",
-            "uid": "LtHokrZ7z",
+            "uid": "Hlrh9b77k",
             "version": 1
           },
           "lines": true,
@@ -2623,7 +2592,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -2634,7 +2603,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "jvm_threads_peak_threads",
+              "expr": "jvm_threads_peak_threads{app=\"$app\", instance=\"$instance\"}",
               "interval": "",
               "legendFormat": "{{instance}}",
               "refId": "A"
@@ -2690,10 +2659,6 @@
     {
       "collapsed": true,
       "datasource": null,
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2733,7 +2698,7 @@
           "libraryPanel": {
             "meta": {
               "connectedDashboards": 0,
-              "created": "2021-07-29T14:03:17.2768678Z",
+              "created": "2021-08-19T21:14:10.985140177Z",
               "createdBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -2741,7 +2706,7 @@
               },
               "folderName": "",
               "folderUid": "",
-              "updated": "2021-07-29T14:03:17.2769165Z",
+              "updated": "2021-08-19T21:14:10.985140273Z",
               "updatedBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -2749,7 +2714,7 @@
               }
             },
             "name": "Process CPU Usage",
-            "uid": "9cTTzrW7k",
+            "uid": "D7xT9x7nz",
             "version": 1
           },
           "lines": true,
@@ -2759,7 +2724,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -2770,7 +2735,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "process_cpu_usage",
+              "expr": "process_cpu_usage{app=\"$app\", instance=\"$instance\"}",
               "interval": "",
               "legendFormat": "{{instance}}",
               "refId": "A"
@@ -2850,7 +2815,7 @@
           "libraryPanel": {
             "meta": {
               "connectedDashboards": 0,
-              "created": "2021-07-29T14:03:20.2341493Z",
+              "created": "2021-08-19T21:14:14.01505809Z",
               "createdBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -2858,7 +2823,7 @@
               },
               "folderName": "",
               "folderUid": "",
-              "updated": "2021-07-29T14:03:20.2341675Z",
+              "updated": "2021-08-19T21:14:14.015058178Z",
               "updatedBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -2866,7 +2831,7 @@
               }
             },
             "name": "Open files count",
-            "uid": "dvxok9Znz",
+            "uid": "eWLo9x77k",
             "version": 1
           },
           "lines": true,
@@ -2876,7 +2841,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -2887,7 +2852,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "process_files_open_files",
+              "expr": "process_files_open_files{app=\"$app\", instance=\"$instance\"}",
               "interval": "",
               "legendFormat": "{{instance}}",
               "refId": "A"
@@ -2943,10 +2908,6 @@
     {
       "collapsed": true,
       "datasource": null,
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2986,7 +2947,7 @@
           "libraryPanel": {
             "meta": {
               "connectedDashboards": 0,
-              "created": "2021-07-29T14:03:25.5225256Z",
+              "created": "2021-08-19T21:14:38.936421655Z",
               "createdBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -2994,7 +2955,7 @@
               },
               "folderName": "",
               "folderUid": "",
-              "updated": "2021-07-29T14:03:25.5225407Z",
+              "updated": "2021-08-19T21:14:38.936421746Z",
               "updatedBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -3002,7 +2963,7 @@
               }
             },
             "name": "System CPU Usage",
-            "uid": "b2yozrWnz",
+            "uid": "U2pA9x77z",
             "version": 1
           },
           "lines": true,
@@ -3012,7 +2973,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -3023,7 +2984,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "system_cpu_usage",
+              "expr": "system_cpu_usage{app=\"$app\", instance=\"$instance\"}",
               "interval": "",
               "legendFormat": "{{instance}}",
               "refId": "A"
@@ -3103,7 +3064,7 @@
           "libraryPanel": {
             "meta": {
               "connectedDashboards": 0,
-              "created": "2021-07-29T14:03:28.5749763Z",
+              "created": "2021-08-19T21:14:41.70475822Z",
               "createdBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -3111,7 +3072,7 @@
               },
               "folderName": "",
               "folderUid": "",
-              "updated": "2021-07-29T14:03:28.5749924Z",
+              "updated": "2021-08-19T21:14:41.70475832Z",
               "updatedBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -3119,7 +3080,7 @@
               }
             },
             "name": "System Load Average",
-            "uid": "3p_TzrZnz",
+            "uid": "NnAA9b7nk",
             "version": 1
           },
           "lines": true,
@@ -3129,7 +3090,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -3140,7 +3101,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "system_load_average_1m",
+              "expr": "system_load_average_1m{app=\"$app\", instance=\"$instance\"}",
               "interval": "",
               "legendFormat": "{{instance}}",
               "refId": "A"
@@ -3196,10 +3157,6 @@
     {
       "collapsed": true,
       "datasource": null,
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -3239,7 +3196,7 @@
           "libraryPanel": {
             "meta": {
               "connectedDashboards": 0,
-              "created": "2021-07-29T14:03:33.9563935Z",
+              "created": "2021-08-19T21:15:07.812670361Z",
               "createdBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -3247,7 +3204,7 @@
               },
               "folderName": "",
               "folderUid": "",
-              "updated": "2021-07-29T14:03:33.9564911Z",
+              "updated": "2021-08-19T21:15:07.812670451Z",
               "updatedBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -3255,7 +3212,7 @@
               }
             },
             "name": "Loaded classes",
-            "uid": "GP6TkrW7z",
+            "uid": "GLv1rxnnz",
             "version": 1
           },
           "lines": true,
@@ -3265,7 +3222,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -3276,7 +3233,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "jvm_classes_loaded_classes",
+              "expr": "jvm_classes_loaded_classes{app=\"$app\", instance=\"$instance\"}",
               "interval": "",
               "legendFormat": "{{instance}}",
               "refId": "A"
@@ -3356,7 +3313,7 @@
           "libraryPanel": {
             "meta": {
               "connectedDashboards": 0,
-              "created": "2021-07-29T14:03:36.8206412Z",
+              "created": "2021-08-19T21:15:11.263844174Z",
               "createdBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -3364,7 +3321,7 @@
               },
               "folderName": "",
               "folderUid": "",
-              "updated": "2021-07-29T14:03:36.8206567Z",
+              "updated": "2021-08-19T21:15:11.263844267Z",
               "updatedBy": {
                 "avatarUrl": "",
                 "id": 0,
@@ -3372,7 +3329,7 @@
               }
             },
             "name": "Unloaded classes / sec",
-            "uid": "BTm0krZ7z",
+            "uid": "6RpJrx7nk",
             "version": 1
           },
           "lines": true,
@@ -3382,7 +3339,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "8.0.6",
+          "pluginVersion": "8.1.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -3393,7 +3350,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "rate(jvm_classes_unloaded_classes_total[1m])",
+              "expr": "rate(jvm_classes_unloaded_classes_total{app=\"$app\", instance=\"$instance\"}[1m])",
               "interval": "",
               "legendFormat": "{{instance}}",
               "refId": "A"
@@ -3452,7 +3409,62 @@
   "style": "dark",
   "tags": [],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": "demo",
+          "value": "demo"
+        },
+        "datasource": null,
+        "definition": "label_values(jvm_gc_pause_seconds_sum, app)",
+        "description": "application name",
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "app",
+        "options": [],
+        "query": {
+          "query": "label_values(jvm_gc_pause_seconds_sum, app)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": true,
+          "text": "app:8080",
+          "value": "app:8080"
+        },
+        "datasource": null,
+        "definition": "label_values(jvm_gc_pause_seconds_sum{app=\"$app\"}, instance)",
+        "description": "instance name",
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "instance",
+        "options": [],
+        "query": {
+          "query": "label_values(jvm_gc_pause_seconds_sum{app=\"$app\"}, instance)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
+      }
+    ]
   },
   "time": {
     "from": "now-15m",
