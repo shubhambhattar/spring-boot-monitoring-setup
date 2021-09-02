@@ -23,7 +23,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 1,
-  "iteration": 1629407211725,
+  "iteration": 1630553525496,
   "links": [],
   "panels": [
     {
@@ -34,6 +34,307 @@
         "w": 24,
         "x": 0,
         "y": 0
+      },
+      "id": 56,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": null,
+          "description": "Information regarding HTTP requests",
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 1
+          },
+          "hiddenSeries": false,
+          "id": 53,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null",
+          "options": {
+            "alertThreshold": true
+          },
+          "percentage": false,
+          "pluginVersion": "8.1.2",
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "exemplar": true,
+              "expr": "sum by (uri, status) (rate(http_server_requests_seconds_count{app=\"$app\", instance=\"$instance\", uri=~\"$uri\"}[1m]))",
+              "interval": "",
+              "legendFormat": "",
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Http Server Requests",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:45",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:46",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": null,
+          "description": "Information regarding HTTP requests latency",
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 1
+          },
+          "hiddenSeries": false,
+          "id": 54,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null",
+          "options": {
+            "alertThreshold": true
+          },
+          "percentage": false,
+          "pluginVersion": "8.1.2",
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "exemplar": true,
+              "expr": "sum(rate(http_server_requests_seconds_sum{app=\"$app\", instance=\"$instance\", uri=~\"$uri\"}[1m])) / sum(rate(http_server_requests_seconds_count{app=\"$app\", instance=\"$instance\", uri=~\"$uri\"}[1m])) ",
+              "interval": "",
+              "legendFormat": "avg",
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Http Server Requests Latency",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:45",
+              "format": "s",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:46",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": null,
+          "description": "Information regarding HTTP requests latency",
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 10
+          },
+          "hiddenSeries": false,
+          "id": 57,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null",
+          "options": {
+            "alertThreshold": true
+          },
+          "percentage": false,
+          "pluginVersion": "8.1.2",
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "exemplar": true,
+              "expr": "max by (uri, status) (http_server_requests_seconds_max{app=\"$app\", instance=\"$instance\", uri=~\"$uri\"})",
+              "hide": false,
+              "interval": "",
+              "legendFormat": "",
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Http Server Requests Max Latency",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:45",
+              "format": "s",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:46",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        }
+      ],
+      "title": "HTTP Server",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 1
       },
       "id": 28,
       "panels": [
@@ -168,28 +469,6 @@
             "total": false,
             "values": true
           },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-08-19T21:08:50.915394177Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-08-19T21:08:50.915394295Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "End of minor GC Triggers / sec",
-            "uid": "Z-Q79b7nk",
-            "version": 1
-          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -208,7 +487,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "rate(jvm_gc_pause_seconds_count{app=\"$app\", action=\"end of minor GC\", instance=\"$instance\"}[1m])",
+              "expr": "sum by (cause) (rate(jvm_gc_pause_seconds_count{app=\"$app\", action=\"end of minor GC\", instance=\"$instance\"}[1m]))",
               "interval": "",
               "legendFormat": "{{cause}}",
               "refId": "A"
@@ -285,28 +564,6 @@
             "total": false,
             "values": true
           },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-08-19T21:08:54.218783536Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-08-19T21:08:54.218783629Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "GC: Live Data Size",
-            "uid": "d_9n9x77z",
-            "version": 1
-          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -325,9 +582,9 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "jvm_gc_live_data_size_bytes{app=\"$app\", instance=\"$instance\"}",
+              "expr": "sum(jvm_gc_live_data_size_bytes{app=\"$app\", instance=\"$instance\"})",
               "interval": "",
-              "legendFormat": "{{instance}}",
+              "legendFormat": "value",
               "refId": "A"
             }
           ],
@@ -401,28 +658,6 @@
             "show": true,
             "total": false,
             "values": true
-          },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-08-19T21:10:04.526073Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-08-19T21:10:04.526073265Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "GC Pause: End of Major GC",
-            "uid": "hTzNrb7nk",
-            "version": 1
           },
           "lines": true,
           "linewidth": 1,
@@ -527,28 +762,6 @@
             "total": false,
             "values": true
           },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-08-19T21:10:07.582264492Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-08-19T21:10:07.582264666Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "Major GC Triggers / sec",
-            "uid": "qhGHrx77k",
-            "version": 1
-          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -567,7 +780,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "rate(jvm_gc_pause_seconds_count{app=\"$app\", action=\"end of major GC\", instance=\"$instance\"}[1m])",
+              "expr": "sum by (cause) (rate(jvm_gc_pause_seconds_count{app=\"$app\", action=\"end of major GC\", instance=\"$instance\"}[1m]))",
               "interval": "",
               "legendFormat": "{{cause}}",
               "refId": "A"
@@ -643,28 +856,6 @@
             "show": true,
             "total": false,
             "values": true
-          },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-08-19T21:10:12.69243737Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-08-19T21:10:12.692437496Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "GC: Max Size of long lived memory pool",
-            "uid": "fhvN9b7nk",
-            "version": 1
           },
           "lines": true,
           "linewidth": 1,
@@ -761,28 +952,6 @@
             "total": false,
             "values": true
           },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-08-19T21:10:18.23398732Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-08-19T21:10:18.233987413Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "GC: Allocated Memory / sec",
-            "uid": "QX2Hrxn7z",
-            "version": 1
-          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -878,28 +1047,6 @@
             "total": false,
             "values": true
           },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-08-19T21:10:22.879807102Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-08-19T21:10:22.87980716Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "GC: Promoted Memory / sec",
-            "uid": "ecaN9b77k",
-            "version": 1
-          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -978,7 +1125,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 1
+        "y": 2
       },
       "id": 26,
       "panels": [
@@ -995,7 +1142,7 @@
             "h": 9,
             "w": 12,
             "x": 0,
-            "y": 2
+            "y": 11
           },
           "hiddenSeries": false,
           "id": 9,
@@ -1009,28 +1156,6 @@
             "show": true,
             "total": false,
             "values": true
-          },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-08-19T21:10:49.315807447Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-08-19T21:10:49.315807548Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "Logback",
-            "uid": "WItDrbnnk",
-            "version": 1
           },
           "lines": true,
           "linewidth": 1,
@@ -1050,7 +1175,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "rate(logback_events_total{app=\"$app\", instance=\"$instance\"}[1m])",
+              "expr": "sum by (level) (rate(logback_events_total{app=\"$app\", instance=\"$instance\"}[1m]))",
               "interval": "",
               "legendFormat": "{{level}}",
               "refId": "A"
@@ -1110,7 +1235,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 2
+        "y": 3
       },
       "id": 11,
       "panels": [
@@ -1142,28 +1267,6 @@
             "total": false,
             "values": true
           },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-08-19T21:12:22.519688719Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-08-19T21:12:22.51968878Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "Heap: Used Memory",
-            "uid": "ySNcrbn7z",
-            "version": 1
-          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -1182,7 +1285,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "jvm_memory_used_bytes{app=\"$app\", area=\"heap\", instance=\"$instance\"}",
+              "expr": "sum by (id) (jvm_memory_used_bytes{app=\"$app\", area=\"heap\", instance=\"$instance\"})",
               "interval": "",
               "legendFormat": "{{id}}",
               "refId": "A"
@@ -1259,28 +1362,6 @@
             "total": false,
             "values": true
           },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-08-19T21:12:25.333976867Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-08-19T21:12:25.333976953Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "Heap: Committed Memory",
-            "uid": "L6d5rbnnz",
-            "version": 1
-          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -1299,7 +1380,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "jvm_memory_committed_bytes{app=\"$app\", area=\"heap\", instance=\"$instance\"}",
+              "expr": "sum by (id) (jvm_memory_committed_bytes{app=\"$app\", area=\"heap\", instance=\"$instance\"})",
               "hide": false,
               "interval": "",
               "legendFormat": "{{id}}",
@@ -1376,28 +1457,6 @@
             "show": true,
             "total": false,
             "values": true
-          },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-08-19T21:12:28.627627181Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-08-19T21:12:28.627627259Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "Heap: Max Memory",
-            "uid": "-Vhcrbn7z",
-            "version": 1
           },
           "lines": true,
           "linewidth": 1,
@@ -1494,28 +1553,6 @@
             "total": false,
             "values": true
           },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-08-19T21:12:34.766770933Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-08-19T21:12:34.766771002Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "NonHeap: Used Memory",
-            "uid": "24fcrb77z",
-            "version": 1
-          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -1534,7 +1571,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "jvm_memory_used_bytes{app=\"$app\", area=\"nonheap\", instance=\"$instance\"}",
+              "expr": "sum by (id) (jvm_memory_used_bytes{app=\"$app\", area=\"nonheap\", instance=\"$instance\"})",
               "interval": "",
               "legendFormat": "{{id}}",
               "refId": "A"
@@ -1611,28 +1648,6 @@
             "total": false,
             "values": true
           },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-08-19T21:12:37.74923186Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-08-19T21:12:37.74923197Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "NonHeap: Committed Memory",
-            "uid": "LWs5rbn7k",
-            "version": 1
-          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -1651,7 +1666,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "jvm_memory_committed_bytes{app=\"$app\", area=\"nonheap\", instance=\"$instance\"}",
+              "expr": "sum by (id) (jvm_memory_committed_bytes{app=\"$app\", area=\"nonheap\", instance=\"$instance\"})",
               "hide": false,
               "interval": "",
               "legendFormat": "{{id}}",
@@ -1728,28 +1743,6 @@
             "show": true,
             "total": false,
             "values": true
-          },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-08-19T21:12:41.224374528Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-08-19T21:12:41.224374612Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "NonHeap: Max Memory",
-            "uid": "HAl5rx7nz",
-            "version": 1
           },
           "lines": true,
           "linewidth": 1,
@@ -1846,28 +1839,6 @@
             "total": false,
             "values": true
           },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-08-19T21:12:45.17011149Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-08-19T21:12:45.170111569Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "Buffer: Used Memory",
-            "uid": "bKqcrb7nk",
-            "version": 1
-          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -1886,7 +1857,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "jvm_buffer_memory_used_bytes{app=\"$app\", instance=\"$instance\"}",
+              "expr": "sum by (id) (jvm_buffer_memory_used_bytes{app=\"$app\", instance=\"$instance\"})",
               "interval": "",
               "legendFormat": "{{id}}",
               "refId": "A"
@@ -1962,28 +1933,6 @@
             "show": true,
             "total": false,
             "values": true
-          },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-08-19T21:12:48.183490874Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-08-19T21:12:48.183490985Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "Buffer: Total Capacity",
-            "uid": "svktrx7nz",
-            "version": 1
           },
           "lines": true,
           "linewidth": 1,
@@ -2080,28 +2029,6 @@
             "total": false,
             "values": true
           },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-08-19T21:12:51.413084935Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-08-19T21:12:51.413085029Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "Buffer: Count",
-            "uid": "YhMprbn7z",
-            "version": 1
-          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -2120,7 +2047,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "jvm_buffer_count_buffers{app=\"$app\", instance=\"$instance\"}",
+              "expr": "sum by (id) (jvm_buffer_count_buffers{app=\"$app\", instance=\"$instance\"})",
               "interval": "",
               "legendFormat": "{{id}}",
               "refId": "A"
@@ -2180,7 +2107,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 3
+        "y": 4
       },
       "id": 13,
       "panels": [
@@ -2212,28 +2139,6 @@
             "total": false,
             "values": true
           },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-08-19T21:13:34.329386608Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-08-19T21:13:34.329386676Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "Thread States",
-            "uid": "wFh2rbnnk",
-            "version": 1
-          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -2252,7 +2157,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "jvm_threads_states_threads{app=\"$app\", instance=\"$instance\"}",
+              "expr": "sum by (state) (jvm_threads_states_threads{app=\"$app\", instance=\"$instance\"})",
               "interval": "",
               "legendFormat": "{{state}}",
               "refId": "A"
@@ -2329,28 +2234,6 @@
             "total": false,
             "values": true
           },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-08-19T21:13:38.084765247Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-08-19T21:13:38.084765338Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "Live Threads",
-            "uid": "Gzxh9xnnz",
-            "version": 1
-          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -2369,9 +2252,9 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "jvm_threads_live_threads{app=\"$app\", instance=\"$instance\"}",
+              "expr": "sum(jvm_threads_live_threads{app=\"$app\", instance=\"$instance\"})",
               "interval": "",
-              "legendFormat": "{{instance}}",
+              "legendFormat": "value",
               "refId": "A"
             }
           ],
@@ -2446,28 +2329,6 @@
             "total": false,
             "values": true
           },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-08-19T21:13:43.252219692Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-08-19T21:13:43.25221978Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "Daemon Threads",
-            "uid": "fiyh9x7nz",
-            "version": 1
-          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -2486,9 +2347,9 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "jvm_threads_daemon_threads{app=\"$app\", instance=\"$instance\"}",
+              "expr": "sum(jvm_threads_daemon_threads{app=\"$app\", instance=\"$instance\"})",
               "interval": "",
-              "legendFormat": "{{instance}}",
+              "legendFormat": "value",
               "refId": "A"
             }
           ],
@@ -2562,28 +2423,6 @@
             "show": true,
             "total": false,
             "values": true
-          },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-08-19T21:13:49.128013124Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-08-19T21:13:49.128013206Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "Peak Threads",
-            "uid": "Hlrh9b77k",
-            "version": 1
           },
           "lines": true,
           "linewidth": 1,
@@ -2663,7 +2502,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 4
+        "y": 5
       },
       "id": 48,
       "panels": [
@@ -2695,28 +2534,6 @@
             "total": false,
             "values": true
           },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-08-19T21:14:10.985140177Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-08-19T21:14:10.985140273Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "Process CPU Usage",
-            "uid": "D7xT9x7nz",
-            "version": 1
-          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -2735,9 +2552,9 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "process_cpu_usage{app=\"$app\", instance=\"$instance\"}",
+              "expr": "sum(process_cpu_usage{app=\"$app\", instance=\"$instance\"})",
               "interval": "",
-              "legendFormat": "{{instance}}",
+              "legendFormat": "value",
               "refId": "A"
             }
           ],
@@ -2812,28 +2629,6 @@
             "total": false,
             "values": true
           },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-08-19T21:14:14.01505809Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-08-19T21:14:14.015058178Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "Open files count",
-            "uid": "eWLo9x77k",
-            "version": 1
-          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -2852,9 +2647,9 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "process_files_open_files{app=\"$app\", instance=\"$instance\"}",
+              "expr": "sum(process_files_open_files{app=\"$app\", instance=\"$instance\"})",
               "interval": "",
-              "legendFormat": "{{instance}}",
+              "legendFormat": "value",
               "refId": "A"
             }
           ],
@@ -2912,7 +2707,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 5
+        "y": 6
       },
       "id": 52,
       "panels": [
@@ -2944,28 +2739,6 @@
             "total": false,
             "values": true
           },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-08-19T21:14:38.936421655Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-08-19T21:14:38.936421746Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "System CPU Usage",
-            "uid": "U2pA9x77z",
-            "version": 1
-          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -2984,10 +2757,18 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "system_cpu_usage{app=\"$app\", instance=\"$instance\"}",
+              "expr": "sum(system_cpu_usage{app=\"$app\", instance=\"$instance\"})",
               "interval": "",
-              "legendFormat": "{{instance}}",
+              "legendFormat": "usage",
               "refId": "A"
+            },
+            {
+              "exemplar": true,
+              "expr": "sum(system_cpu_count{app=\"$app\", instance=\"$instance\"})",
+              "hide": false,
+              "interval": "",
+              "legendFormat": "max",
+              "refId": "B"
             }
           ],
           "thresholds": [],
@@ -3060,28 +2841,6 @@
             "show": true,
             "total": false,
             "values": true
-          },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-08-19T21:14:41.70475822Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-08-19T21:14:41.70475832Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "System Load Average",
-            "uid": "NnAA9b7nk",
-            "version": 1
           },
           "lines": true,
           "linewidth": 1,
@@ -3161,7 +2920,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 6
+        "y": 7
       },
       "id": 44,
       "panels": [
@@ -3192,28 +2951,6 @@
             "show": true,
             "total": false,
             "values": true
-          },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-08-19T21:15:07.812670361Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-08-19T21:15:07.812670451Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "Loaded classes",
-            "uid": "GLv1rxnnz",
-            "version": 1
           },
           "lines": true,
           "linewidth": 1,
@@ -3310,28 +3047,6 @@
             "total": false,
             "values": true
           },
-          "libraryPanel": {
-            "meta": {
-              "connectedDashboards": 0,
-              "created": "2021-08-19T21:15:11.263844174Z",
-              "createdBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              },
-              "folderName": "",
-              "folderUid": "",
-              "updated": "2021-08-19T21:15:11.263844267Z",
-              "updatedBy": {
-                "avatarUrl": "",
-                "id": 0,
-                "name": ""
-              }
-            },
-            "name": "Unloaded classes / sec",
-            "uid": "6RpJrx7nk",
-            "version": 1
-          },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
@@ -3404,7 +3119,7 @@
       "type": "row"
     }
   ],
-  "refresh": "1m",
+  "refresh": "10s",
   "schemaVersion": 30,
   "style": "dark",
   "tags": [],
@@ -3418,7 +3133,7 @@
           "value": "demo"
         },
         "datasource": null,
-        "definition": "label_values(jvm_gc_pause_seconds_sum, app)",
+        "definition": "label_values(process_uptime_seconds, app)",
         "description": "application name",
         "error": null,
         "hide": 0,
@@ -3428,7 +3143,38 @@
         "name": "app",
         "options": [],
         "query": {
-          "query": "label_values(jvm_gc_pause_seconds_sum, app)",
+          "query": "label_values(process_uptime_seconds, app)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": null,
+        "definition": "label_values(process_uptime_seconds{app=\"$app\"}, instance)",
+        "description": "instance name",
+        "error": null,
+        "hide": 0,
+        "includeAll": true,
+        "label": null,
+        "multi": true,
+        "name": "instance",
+        "options": [],
+        "query": {
+          "query": "label_values(process_uptime_seconds{app=\"$app\"}, instance)",
           "refId": "StandardVariableQuery"
         },
         "refresh": 1,
@@ -3441,21 +3187,25 @@
         "allValue": null,
         "current": {
           "selected": true,
-          "text": "app:8080",
-          "value": "app:8080"
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
         },
         "datasource": null,
-        "definition": "label_values(jvm_gc_pause_seconds_sum{app=\"$app\"}, instance)",
-        "description": "instance name",
+        "definition": "label_values(http_server_requests_seconds_count{app=\"$app\", instance=\"$instance\"}, uri)",
+        "description": "uri",
         "error": null,
         "hide": 0,
-        "includeAll": false,
+        "includeAll": true,
         "label": null,
-        "multi": false,
-        "name": "instance",
+        "multi": true,
+        "name": "uri",
         "options": [],
         "query": {
-          "query": "label_values(jvm_gc_pause_seconds_sum{app=\"$app\"}, instance)",
+          "query": "label_values(http_server_requests_seconds_count{app=\"$app\", instance=\"$instance\"}, uri)",
           "refId": "StandardVariableQuery"
         },
         "refresh": 1,
