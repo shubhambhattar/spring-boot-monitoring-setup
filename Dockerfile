@@ -1,4 +1,4 @@
-FROM openjdk:11.0.12-jre-slim
+FROM eclipse-temurin:17.0.4_8-jre-jammy
 
 RUN [ "groupadd", "--system", "spring-boot" ]
 RUN [ "useradd", "--system", "--gid", "spring-boot", "spring-boot-user" ]
@@ -9,7 +9,7 @@ USER spring-boot-user
 ENV JAVA_TOOL_OPTIONS="-XX:+PrintFlagsFinal \
                         -XX:+UseContainerSupport \
                         -XX:MaxRAMPercentage=60.0 \
-                        -XX:+UseG1GC \
+                        -XX:+UseParallelGC \
                         -XX:+HeapDumpOnOutOfMemoryError \
                         -Dhost.name=localhost \
                         -Dcom.sun.management.jmxremote \
