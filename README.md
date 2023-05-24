@@ -1,6 +1,7 @@
 This project aims to quickly spin up a monitoring setup for a spring-boot application in local environment. It will spin up the following containers:
 - cAdvisor (for container metrics)
 - Prometheus (for monitoring)
+- Promlens (for complex Prometheus querying)
 - Grafana (for visualization)
 - spring-boot app
 
