@@ -33,5 +33,6 @@ To start the application, run the following command:
 Different dashboards will be available once the above commands successfully runs:
 - Grafana dashboard: [http://localhost:3000](http://localhost:3000)
 - Prometheus dashboard: [http://localhost:9090](http://localhost:9090)
+- Promlens dashboard: [http://localhost:9000](http://localhost:9000)
 - cAdvisor dashboard: [http://localhost:8090](http://localhost:8090)
 - spring-boot app: [http://localhost:8080](http://localhost:8080)
