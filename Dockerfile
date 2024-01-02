@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17.0.4_8-jre-jammy
+FROM eclipse-temurin:21.0.1_12-jre-jammy
 
 RUN [ "groupadd", "--system", "spring-boot" ]
 RUN [ "useradd", "--system", "--gid", "spring-boot", "spring-boot-user" ]
