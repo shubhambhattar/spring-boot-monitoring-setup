@@ -1644,6 +1644,632 @@
     },
     {
       "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 3
+      },
+      "id": 79,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "description": "Time spent in GC pause",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "s"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 15,
+            "w": 8,
+            "x": 0,
+            "y": 4
+          },
+          "id": 73,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "9.5.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "exemplar": true,
+              "expr": "sum by (cause) (rate(jvm_gc_pause_seconds_sum{app=\"$app\", action=\"end of GC cycle\"}[5m])) / sum by (cause) (rate(jvm_gc_pause_seconds_count{app=\"$app\", action=\"end of GC cycle\"}[5m]))",
+              "interval": "",
+              "legendFormat": "{{cause}}",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "avg (GC action: End of GC cycle) / cause",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "description": "Time spent in GC pause",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "s"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 15,
+            "w": 8,
+            "x": 8,
+            "y": 4
+          },
+          "id": 74,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "9.5.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "exemplar": true,
+              "expr": "max by (cause) (jvm_gc_pause_seconds_max{app=\"$app\", action=\"end of GC cycle\"})",
+              "interval": "",
+              "legendFormat": "{{cause}}",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "max (GC action: End of GC cycle) / cause",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "description": "Trigges / sec for (GC action: End of GC cycle)",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "s"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 15,
+            "w": 8,
+            "x": 16,
+            "y": 4
+          },
+          "id": 75,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "9.5.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "exemplar": true,
+              "expr": "sum by (cause) (rate(jvm_gc_pause_seconds_count{app=\"$app\", action=\"end of GC cycle\"}[5m]))",
+              "interval": "",
+              "legendFormat": "{{cause}}",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Trigges / sec for (GC action: End of GC cycle) / cause",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "description": "Time spent in GC pause",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "s"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 15,
+            "w": 8,
+            "x": 0,
+            "y": 19
+          },
+          "id": 76,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "9.5.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "exemplar": true,
+              "expr": "sum by (cause) (rate(jvm_gc_pause_seconds_sum{app=\"$app\", action=\"end of GC pause\"}[5m])) / sum by (cause) (rate(jvm_gc_pause_seconds_count{app=\"$app\", action=\"end of GC pause\"}[5m]))",
+              "interval": "",
+              "legendFormat": "{{cause}}",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "avg (GC action: End of GC pause) / cause",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "description": "Time spent in GC pause",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "s"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 15,
+            "w": 8,
+            "x": 8,
+            "y": 19
+          },
+          "id": 77,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "9.5.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "exemplar": true,
+              "expr": "max by (cause) (jvm_gc_pause_seconds_max{app=\"$app\", action=\"end of GC pause\"})",
+              "interval": "",
+              "legendFormat": "{{cause}}",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "max (GC action: End of GC pause) / cause",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "description": "Trigges / sec for (GC action: End of GC pause)",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "s"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 15,
+            "w": 8,
+            "x": 16,
+            "y": 19
+          },
+          "id": 78,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "9.5.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "exemplar": true,
+              "expr": "sum by (cause) (rate(jvm_gc_pause_seconds_count{app=\"$app\", action=\"end of GC pause\"}[5m]))",
+              "interval": "",
+              "legendFormat": "{{cause}}",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Trigges / sec for (GC action: End of GC pause) / cause",
+          "type": "timeseries"
+        }
+      ],
+      "title": "ZGC",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
       "datasource": {
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
@@ -1652,7 +2278,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 3
+        "y": 4
       },
       "id": 28,
       "panels": [
@@ -1719,7 +2345,7 @@
             "h": 15,
             "w": 8,
             "x": 0,
-            "y": 19
+            "y": 5
           },
           "id": 30,
           "options": {
@@ -1831,7 +2457,7 @@
             "h": 15,
             "w": 8,
             "x": 8,
-            "y": 19
+            "y": 5
           },
           "id": 59,
           "options": {
@@ -1944,7 +2570,7 @@
             "h": 15,
             "w": 8,
             "x": 16,
-            "y": 19
+            "y": 5
           },
           "id": 32,
           "options": {
@@ -2044,7 +2670,7 @@
             "h": 9,
             "w": 8,
             "x": 0,
-            "y": 34
+            "y": 20
           },
           "id": 31,
           "options": {
@@ -2156,7 +2782,7 @@
             "h": 9,
             "w": 8,
             "x": 8,
-            "y": 34
+            "y": 20
           },
           "id": 36,
           "options": {
@@ -2256,7 +2882,7 @@
             "h": 9,
             "w": 8,
             "x": 16,
-            "y": 34
+            "y": 20
           },
           "id": 35,
           "options": {
@@ -2356,7 +2982,7 @@
             "h": 9,
             "w": 8,
             "x": 0,
-            "y": 43
+            "y": 29
           },
           "id": 37,
           "options": {
@@ -2456,7 +3082,7 @@
             "h": 9,
             "w": 8,
             "x": 8,
-            "y": 43
+            "y": 29
           },
           "id": 38,
           "options": {
@@ -2556,7 +3182,7 @@
             "h": 9,
             "w": 8,
             "x": 16,
-            "y": 43
+            "y": 29
           },
           "id": 39,
           "options": {
@@ -2616,7 +3242,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 4
+        "y": 5
       },
       "id": 11,
       "panels": [
@@ -2683,7 +3309,7 @@
             "h": 9,
             "w": 8,
             "x": 0,
-            "y": 5
+            "y": 6
           },
           "id": 17,
           "options": {
@@ -2783,7 +3409,7 @@
             "h": 9,
             "w": 8,
             "x": 8,
-            "y": 5
+            "y": 6
           },
           "id": 19,
           "options": {
@@ -2886,7 +3512,7 @@
             "h": 9,
             "w": 8,
             "x": 16,
-            "y": 5
+            "y": 6
           },
           "id": 33,
           "options": {
@@ -2986,7 +3612,7 @@
             "h": 13,
             "w": 8,
             "x": 0,
-            "y": 14
+            "y": 15
           },
           "id": 18,
           "options": {
@@ -3086,7 +3712,7 @@
             "h": 13,
             "w": 8,
             "x": 8,
-            "y": 14
+            "y": 15
           },
           "id": 34,
           "options": {
@@ -3187,7 +3813,7 @@
             "h": 13,
             "w": 8,
             "x": 16,
-            "y": 14
+            "y": 15
           },
           "id": 20,
           "options": {
@@ -3270,8 +3896,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -3287,7 +3912,7 @@
             "h": 9,
             "w": 8,
             "x": 0,
-            "y": 27
+            "y": 28
           },
           "id": 2,
           "options": {
@@ -3370,8 +3995,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -3387,7 +4011,7 @@
             "h": 9,
             "w": 8,
             "x": 8,
-            "y": 27
+            "y": 28
           },
           "id": 21,
           "options": {
@@ -3470,8 +4094,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -3487,7 +4110,7 @@
             "h": 9,
             "w": 8,
             "x": 16,
-            "y": 27
+            "y": 28
           },
           "id": 22,
           "options": {
@@ -3570,8 +4193,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -3587,7 +4209,7 @@
             "h": 9,
             "w": 8,
             "x": 0,
-            "y": 36
+            "y": 37
           },
           "id": 72,
           "options": {
@@ -3649,7 +4271,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 5
+        "y": 6
       },
       "id": 13,
       "panels": [
@@ -3699,8 +4321,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -3799,8 +4420,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -4074,7 +4694,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 6
+        "y": 7
       },
       "id": 48,
       "panels": [
@@ -4124,8 +4744,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -4224,8 +4843,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -4301,7 +4919,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 7
+        "y": 8
       },
       "id": 52,
       "panels": [
@@ -4351,8 +4969,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -4463,8 +5080,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -4540,7 +5156,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 8
+        "y": 9
       },
       "id": 44,
       "panels": [
@@ -4590,8 +5206,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -4690,8 +5305,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
