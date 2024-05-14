@@ -52,7 +52,7 @@ services:
       - "8686:8686"
       - "9598:9598"
     volumes:
-      - ./vector/vector.yaml:/etc/vector/vector.yaml
+      - ./vector/vector.yml:/etc/vector/vector.yml
 
   app:
     build:
